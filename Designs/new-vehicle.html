@@ -39,7 +39,7 @@
               <a href="dashboard.html" class="link">Home</a>
             </li>
             <li class="list">
-              <a href="clients.html" class="link active">Clients</a>
+              <a href="clients.html" class="link">Clients</a>
             </li>
             <li class="list">
               <a href="underwriting.html" class="link">Underwriting</a>
@@ -48,7 +48,7 @@
               <a href="claims.html" class="link">Claims</a>
             </li>
             <li class="list">
-              <a href="vehicles.html" class="link">Vehicles</a>
+              <a href="vehicles.html" class="link active">Vehicles</a>
             </li>
             <li class="list">
               <a href="" class="link">Credit</a>
@@ -83,59 +83,15 @@
       <div class="dash-main">
         <div class="dash-content">
           <div class="data-input-content">
-            <h2 class="data-input-title">New Client Registration</h2>
+            <h2 class="data-input-title">New Vehicle Registration</h2>
             <form action="" method="post" class="form-action">
               <div class="form-contents">
                 <div class="rows">
                   <div class="data-col">
                     <div class="input-holder inside">
-                      <select
-                        name=""
-                        class="input-space"
-                        required
-                        id="business_type"
-                      >
-                        <option value="" selected>Business Type</option>
-                        <option value="Individual">Individual</option>
-                        <option value="Corporate">Corporate</option>
-                      </select>
-                    </div>
-                    <div class="split-diplay">
-                      <div class="input-holder split">
-                        <input
-                          type="text"
-                          placeholder="First name"
-                          required
-                          id="firstname"
-                          name=""
-                          class="input-space"
-                        />
-                      </div>
-                      <div class="input-holder split">
-                        <input
-                          type="text"
-                          id="lastname"
-                          placeholder="Last name"
-                          required
-                          name=""
-                          class="input-space"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-holder inside">
                       <input
                         type="text"
-                        placeholder="ID Number"
-                        required
-                        id="id_num"
-                        name=""
-                        class="input-space"
-                      />
-                    </div>
-                    <div class="input-holder inside">
-                      <input
-                        type="text"
-                        placeholder="KRA Pin"
+                        placeholder="Registration Number"
                         required
                         name=""
                         class="input-space"
@@ -144,7 +100,7 @@
                     <div class="input-holder inside">
                       <input
                         type="text"
-                        placeholder="Street, City"
+                        placeholder="Chassis Number"
                         required
                         name=""
                         class="input-space"
@@ -153,7 +109,27 @@
                     <div class="input-holder inside">
                       <input
                         type="text"
-                        placeholder="P. O. Box"
+                        placeholder="Logbook Number"
+                        required
+                        name=""
+                        class="input-space"
+                      />
+                    </div>
+                    <div class="input-holder inside">
+                      <input
+                        type="text"
+                        placeholder="Make"
+                        required
+                        name=""
+                        class="input-space"
+                      />
+                    </div>
+                    <div class="input-holder inside">
+                      <input
+                        type="text"
+                        placeholder="Year of Manufacture"
+                        onblur="(this.type='text')"
+                        onfocus="(this. type='date')"
                         required
                         name=""
                         class="input-space"
@@ -163,49 +139,26 @@
                   <div class="data-col">
                     <div class="input-holder inside">
                       <input
-                        type="tel"
-                        placeholder="Phone"
+                        type="text"
+                        placeholder="Engine Number"
                         required
                         name=""
                         class="input-space"
                       />
-                    </div>
-                    <div class="input-holder inside">
-                      <select name="" class="input-space" required id="">
-                        <option value="" selected>Client Level</option>
-                        <option value="High Level">High Level</option>
-                        <option value="Normal Level">Normal Level</option>
-                        <option value="Low Level">Low Level</option>
-                      </select>
-                    </div>
-                    <div class="input-holder inside">
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        required
-                        name=""
-                        class="input-space"
-                      />
-                    </div>
-
-                    <div class="input-holder inside">
-                      <input
-                        list="business_nature"
-                        class="input-space"
-                        placeholder="Select or Enter Nature of Business"
-                        name=""
-                        required
-                      />
-                      <datalist id="business_nature">
-                        <option value="Manufacturing"></option>
-                        <option value="Processing"></option>
-                        <option value="Contruction"></option>
-                      </datalist>
                     </div>
                     <div class="input-holder inside">
                       <input
                         type="text"
-                        placeholder="Contact Person Name"
+                        placeholder="Color"
+                        required
+                        name=""
+                        class="input-space"
+                      />
+                    </div>
+                    <div class="input-holder inside">
+                      <input
+                        type="text"
+                        placeholder="Loading Capacity"
                         required
                         name=""
                         class="input-space"
@@ -214,7 +167,7 @@
                     <div class="input-holder inside">
                       <input
                         type="tel"
-                        placeholder="Contact Person Phone"
+                        placeholder="Owner's Full Name"
                         required
                         name=""
                         class="input-space"
@@ -231,7 +184,6 @@
         </div>
       </div>
     </div>
-    <script src="./js/client-type.js"></script>
     <script src="./js/time.js"></script>
     <script src="./js/nav.js"></script>
   </body>

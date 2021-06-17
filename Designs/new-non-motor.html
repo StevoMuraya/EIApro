@@ -83,7 +83,7 @@
       <div class="dash-main">
         <div class="dash-content">
           <div class="data-input-content">
-            <h2 class="data-input-title">New Motor Policy</h2>
+            <h2 class="data-input-title">New Non-Motor Policy</h2>
             <form action="" method="post" class="form-action">
               <div class="form-contents">
                 <div class="rows">
@@ -108,22 +108,17 @@
                     </div>
                     <div class="input-holder inside">
                       <input
-                        list="plate_number"
-                        class="input-space"
-                        placeholder="Select or Enter Vehicle Reistration Number"
-                        name=""
+                        type="text"
+                        placeholder="Policy Number"
                         required
+                        name=""
+                        class="input-space"
                       />
-                      <datalist id="plate_number">
-                        <option value="1 KBL 084R">KBL 084R</option>
-                        <option value="2 KBL 084T">KBL 084T</option>
-                        <option value="3 KBL 084S">KBL 084S</option>
-                      </datalist>
                     </div>
                     <div class="input-holder inside">
                       <input
                         type="text"
-                        placeholder="Policy Number"
+                        placeholder="Policy Name/ Project Name"
                         required
                         name=""
                         class="input-space"
@@ -136,34 +131,74 @@
                         required
                         id="class_selection"
                       >
-                        <option value="" selected>Select MV Class</option>
-                        <option value="">-- PRIVATE --</option>
-                        <option value="Private Motor Vehicle">
-                          Private Motor Vehicle
+                        <option value="" selected>Select Cover Type</option>
+                        <option value="">--INDIVIDUAL--</option>
+                        <option value="Personal Accident">
+                          Personal Accident
                         </option>
-                        <option value="Private Motorcycle">
-                          Private Motorcycle
+                        <option value="Professional Indemnity">
+                          Professional Indemnity
                         </option>
-                        <option value="">-- COMMERCIAL --</option>
-                        <option value="General Cartage">General Cartage</option>
-                        <option value="Own Goods">Own Goods</option>
-                        <option value="Special Vehicles">
-                          Special Vehicles
+                        <option value="Others">Others</option>
+                        <option value="">--CORPORATE--</option>
+                        <option value="Contrators all risk">
+                          Contrators all risk
                         </option>
-                        <option value="Institution Vehicles">
-                          Institution Vehicles
+                        <option value="Marine Cargo">Marine Cargo</option>
+                        <option value="Fidelity Guarantee">
+                          Fidelity Guarantee
                         </option>
-                        <option value="Public Service Vehicles">
-                          Public Service Vehicles
+                        <option value="Work Injury Benefit">
+                          Work Injury Benefit
                         </option>
-                        <option value="Chauffer Drive">Chauffer Drive</option>
+                        <option value="Employer's Liability">
+                          Employer's Liability
+                        </option>
+                        <option value="Public Liability">
+                          Public Liability
+                        </option>
+                        <option value="Fire and Perils">Fire and Perils</option>
+                        <option value="Bulglary">Bulglary</option>
+                        <option value="Contractor's Plant and Machinery">
+                          Contractor's Plant and Machinery
+                        </option>
+                        <option value="Goods in transit">
+                          Goods in transit
+                        </option>
                       </select>
+                    </div>
+                    <div
+                      class="input-holder inside"
+                      id="reg_number_holder"
+                      style="display: none"
+                    >
+                      <input
+                        type="text"
+                        placeholder="Registration Number"
+                        required
+                        id="reg_number"
+                        name=""
+                        class="input-space"
+                      />
+                    </div>
+                    <div
+                      class="input-holder inside"
+                      id="chasis_number_holder"
+                      style="display: none"
+                    >
+                      <input
+                        type="text"
+                        id="chasis_number"
+                        placeholder="Chassis Number"
+                        name=""
+                        class="input-space"
+                      />
                     </div>
                     <div class="input-holder inside">
                       <select
                         name=""
-                        class="input-space"
                         required
+                        class="input-space"
                         id="class_selection"
                       >
                         <option value="" selected>Select Insuarer</option>
@@ -199,21 +234,6 @@
                         </option>
                         <option value="Resolution Insurance Company Ltd">
                           Resolution Insurance Company Ltd
-                        </option>
-                      </select>
-                    </div>
-                    <div class="input-holder inside">
-                      <select
-                        name=""
-                        class="input-space"
-                        required
-                        id="cover_type"
-                      >
-                        <option value="" selected>Select Cover Type</option>
-                        <option value="Comprehensive">Comprehensive</option>
-                        <option value="Third Party">Third Party</option>
-                        <option value="Third Party Fire and Theft">
-                          Third Party Fire &amp; Theft
                         </option>
                       </select>
                     </div>
@@ -270,9 +290,10 @@
                     <div class="input-holder inside">
                       <input
                         type="number"
-                        placeholder="Rate"
+                        placeholder="Stamp Duty (Kshs)"
                         name=""
-                        id="rate_input"
+                        required
+                        id="stamp_duty"
                         class="input-space"
                       />
                     </div>
@@ -282,7 +303,7 @@
                           height: auto;
                           padding: 1rem 0 0 1rem;
                           max-width: 523px;
-                          max-height: 141px;
+                          max-height: 90px;
                         "
                         type="text"
                         id="policy_remarks"
@@ -303,17 +324,18 @@
                         <div class="data-col">
                           <div
                             class="split-diplay other"
-                            style="align-items: center"
+                            style="align-items: center; display: none"
+                            id="pal_holder"
                           >
                             <div class="checkbox-holder">
-                              <label for="excess_protector" class="check-box"
-                                >Excess Protector (E.P)</label
+                              <label for="pal" class="check-box"
+                                >Personal Accident Loading (P.A.L)</label
                               >
                               <input
                                 type="checkbox"
                                 class="check-box"
                                 name=""
-                                id="excess_protector"
+                                id="pal"
                               />
                             </div>
                             <div class="check-box-holder-data">
@@ -322,18 +344,46 @@
                                 placeholder="Basic Premium(Kshs)"
                                 name=""
                                 disabled
-                                id="ep_basic_premium"
+                                id="pal_basic_premium"
                                 class="input-space"
                               />
                             </div>
                           </div>
                           <div
                             class="split-diplay other"
-                            style="align-items: center"
+                            style="align-items: center; display: none"
+                            id="mp_holder"
+                          >
+                            <div class="checkbox-holder">
+                              <label for="mp" class="check-box"
+                                >Maintenance Period (M.P)</label
+                              >
+                              <input
+                                type="checkbox"
+                                class="check-box"
+                                name=""
+                                id="mp"
+                              />
+                            </div>
+                            <div class="check-box-holder-data">
+                              <input
+                                type="number"
+                                placeholder="Basic Premium(Kshs)"
+                                name=""
+                                disabled
+                                id="mp_basic_premium"
+                                class="input-space"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="split-diplay other"
+                            style="align-items: center; display: none"
+                            id="pvt_holder"
                           >
                             <div class="checkbox-holder">
                               <label for="pvt" class="check-box"
-                                >Political Violence &amp; Terrorism Rate
+                                >Political Violence &amp; Terrorism
                                 (P.V.T)</label
                               >
                               <input
@@ -356,17 +406,18 @@
                           </div>
                           <div
                             class="split-diplay other"
-                            style="align-items: center"
+                            style="align-items: center; display: none"
+                            id="tpl_holder"
                           >
                             <div class="checkbox-holder">
-                              <label for="windscreen_benefit" class="check-box"
-                                >Windscreen Benefit</label
+                              <label for="tpl" class="check-box"
+                                >Third Party Liability</label
                               >
                               <input
                                 type="checkbox"
                                 class="check-box"
                                 name=""
-                                id="windscreen_benefit"
+                                id="tpl"
                               />
                             </div>
                             <div class="check-box-holder-data">
@@ -375,33 +426,7 @@
                                 placeholder="Basic Premium(Kshs)"
                                 name=""
                                 disabled
-                                id="windscreen_benefit_basic_premium"
-                                class="input-space"
-                              />
-                            </div>
-                          </div>
-                          <div
-                            class="split-diplay other"
-                            style="align-items: center"
-                          >
-                            <div class="checkbox-holder">
-                              <label for="loss_of_use" class="check-box"
-                                >Loss of Use</label
-                              >
-                              <input
-                                type="checkbox"
-                                class="check-box"
-                                name=""
-                                id="loss_of_use"
-                              />
-                            </div>
-                            <div class="check-box-holder-data">
-                              <input
-                                type="number"
-                                placeholder="Basic Premium(Kshs)"
-                                name=""
-                                disabled
-                                id="loss_of_use_basic_premium"
+                                id="tpl_basic_premium"
                                 class="input-space"
                               />
                             </div>
@@ -409,86 +434,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="data-col">
-                      <div
-                        class="split-diplay other"
-                        style="align-items: center"
-                      >
-                        <div class="checkbox-holder">
-                          <label for="pll" class="check-box"
-                            >Passanger Legal Liability (P.L.L)</label
-                          >
-                          <input
-                            type="checkbox"
-                            class="check-box"
-                            name=""
-                            id="pll"
-                          />
-                        </div>
-                        <div class="check-box-holder-data">
-                          <input
-                            type="number"
-                            placeholder="Basic Premium(Kshs)"
-                            name=""
-                            disabled
-                            id="pll_benefit_basic_premium"
-                            class="input-space"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="split-diplay other"
-                        style="align-items: center"
-                      >
-                        <div class="checkbox-holder">
-                          <label for="rescue_benefit" class="check-box"
-                            >Rescue Benefit</label
-                          >
-                          <input
-                            type="checkbox"
-                            class="check-box"
-                            name=""
-                            id="rescue_benefit"
-                          />
-                        </div>
-                        <div class="check-box-holder-data">
-                          <input
-                            type="number"
-                            placeholder="Basic Premium(Kshs)"
-                            name=""
-                            disabled
-                            id="rescue_benefit_basic_premium"
-                            class="input-space"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="split-diplay other"
-                        style="align-items: center"
-                      >
-                        <div class="checkbox-holder">
-                          <label for="personal_accident" class="check-box"
-                            >Personal Accident (P.A)</label
-                          >
-                          <input
-                            type="checkbox"
-                            class="check-box"
-                            name=""
-                            id="personal_accident"
-                          />
-                        </div>
-                        <div class="check-box-holder-data">
-                          <input
-                            type="number"
-                            placeholder="Basic Premium(Kshs)"
-                            name=""
-                            disabled
-                            id="personal_accident_basic_premium"
-                            class="input-space"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <div class="data-col"></div>
                   </div>
                 </div>
                 <div class="button-holder" style="margin-left: 1.5rem">
@@ -500,8 +446,8 @@
         </div>
       </div>
     </div>
+    <script src="./js/non-motor-benefits.js"></script>
     <script src="./js/policy-period.js"></script>
-    <script src="./js/motor-benefits.js"></script>
     <script src="./js/time.js"></script>
     <script src="./js/nav.js"></script>
   </body>

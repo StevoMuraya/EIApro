@@ -703,6 +703,7 @@ img {
   width: 100%;
   display: flex;
   padding-left: 1rem;
+  margin: 0.7rem 0;
   flex-wrap: wrap;
 }
 
@@ -880,8 +881,8 @@ img {
 }
 .benefits-list-display {
   width: 100%;
-  display: none;
   flex-direction: column;
+  display: none;
   margin-top: 2rem;
 }
 .checkbox-holder label {
@@ -900,7 +901,15 @@ img {
   max-width: 160px;
   margin: 0 1rem;
 }
-
+.data-col.premiums {
+  background-color: var(--background-grey);
+}
+.policy-benefits-display {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  margin: 1em;
+  padding: 1em;
+}
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 400px) {
